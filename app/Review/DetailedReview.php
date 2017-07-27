@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Review;
+namespace Fiscaluno\Review;
 
 use Illuminate\Database\Eloquent\Model;
 

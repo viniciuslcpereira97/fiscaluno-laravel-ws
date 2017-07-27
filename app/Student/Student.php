@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Student;
+namespace Fiscaluno\Student;
 
 use Illuminate\Database\Eloquent\Model;
 
