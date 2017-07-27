@@ -5,6 +5,8 @@ namespace Fiscaluno\Institution;
 use Illuminate\Database\Eloquent\Model;
 
 use Fiscaluno\Student\Student;
+use Fiscaluno\Review\GeneralReview;
+use Fiscaluno\Review\DetailedReview;
 
 class Institution extends Model
 {
@@ -20,22 +22,40 @@ class Institution extends Model
         'email',
         'website',
         'phoneNumber',
-        'imageUri',
+        'imageUri'
     ];
 
     /**
-     * Not Authorized atributtes to mass assignment
+     * Not authorized atributtes to mass assignment
      * @var array
      */
     protected $guarded = ['id'];
 
     /**
      * All students at institution
-     * @return Colletion
+     * @return Collection
      */
     public function students()
     {
         return $this->hasMany(Student::class);
+    }
+
+    /**
+     * All general reviews
+     * @return Collection
+     */
+    public function generalReviews()
+    {
+        return $this->hasMany(GeneralReview::class);
+    }
+
+    /**
+     * All detailed reviews
+     * @return Collection
+     */
+    public function detailedReviews()
+    {
+        return $this->hasMany(DetailedReview::class);
     }
 
 }

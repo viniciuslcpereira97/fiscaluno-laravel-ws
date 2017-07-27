@@ -2,9 +2,31 @@
 
 namespace Fiscaluno\Review;
 
-use Illuminate\Database\Eloquent\Model;
-
-class GeneralReview extends Model
+class GeneralReview extends Review
 {
-    //
+    
+    /**
+     * Authorized mass assignment attributes
+     * @var array
+     */
+    protected $fillable = [
+        'id',
+        'course',
+        'institution_id',
+        'student_id',
+        'suggestion',
+        'rate',
+        'pros',
+        'cons',
+        'description',
+        'payment',
+        'startYear'
+    ];
+
+    /**
+     * [$guarded description]
+     * @var array
+     */
+    protected $guarded = ['id'];
+
 }
