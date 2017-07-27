@@ -18,7 +18,7 @@ class CreateStudentsTable extends Migration
             $table->increments('id');
             $table->integer('age');
             $table->string('name');
-            $table->email('email')->unique();
+            $table->string('email')->unique();
             $table->string('gender');
             $table->string('nacionality');
             $table->string('civilStatus');
