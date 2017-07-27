@@ -10,7 +10,6 @@ class GeneralReview extends Review
      * @var array
      */
     protected $fillable = [
-        'id',
         'course',
         'institution_id',
         'student_id',
