@@ -49,7 +49,7 @@ $factory->define(\Fiscaluno\Institution\Institution::class, function(Faker\Gener
         'phoneNumber' => $faker->phoneNumber,
         'imageUri' => $faker->url
     ];
-})
+});
 
 $factory->define(\Fiscaluno\Review\GeneralReview::class, function(Faker\Generator $faker) {
     return [
@@ -61,17 +61,17 @@ $factory->define(\Fiscaluno\Review\GeneralReview::class, function(Faker\Generato
         'pros' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'cons' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-        'payment' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-        'startYear' => $faker->date($format = 'd-m-Y', $max = 'now')
+        'payment' => $faker->numberBetween($min = 0, $max = 10),
+        'startYear' => $faker->numberBetween($min = 2000, $max = 2017)
     ];
-})
+});
 
 $factory->define(\Fiscaluno\Review\DetailedReview::class, function(Faker\Generator $faker) {
     return [
-       'course' => $faker->$faker->sentence($nbWords = 1, $variableNbWords = true),
+       'course' => $faker->sentence($nbWords = 1, $variableNbWords = true),
         'institution_id' => 1,
         'student_id' => 1,
-        'type' => $faker->$faker->sentence($nbWords = 1, $variableNbWords = true),
+        'type' => $faker->sentence($nbWords = 1, $variableNbWords = true),
         'value' => $faker->numberBetween($min = 0, $max = 10)
     ];
-})
+});
