@@ -28,6 +28,7 @@ Route::group([
         Route::get('/', 'GeneralReviewsController@allReviews');
         Route::get('{review_id}', 'GeneralReviewsController@reviewById');
         Route::get('institution/{institution_id}', 'GeneralReviewsController@reviewsByInstitution');
+        Route::get('author/{author_id}', 'GeneralReviewsController@reviewsByAuthor');
     });
 
     Route::group([
@@ -36,6 +37,7 @@ Route::group([
         Route::get('/', 'DetailedReviewsController@allReviews');
         Route::get('{review_id}', 'DetailedReviewsController@reviewById');
         Route::get('institution/{institution_id}', 'DetailedReviewsController@reviewsByInstitution');
+        Route::get('author/{author_id}', 'DetailedReviewsController@reviewsByAuthor');
     });
 
 });
