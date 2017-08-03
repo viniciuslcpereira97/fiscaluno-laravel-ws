@@ -5,7 +5,7 @@ namespace Fiscaluno\Repositories\Reviews;
 use Fiscaluno\Student\Student;
 use Fiscaluno\Institution\Institution;
 use Fiscaluno\Repositories\BaseRepository;
-use \Fiscaluno\Traits\ReviewsRelationshipTrait;
+use Fiscaluno\Traits\ReviewsRelationshipTrait;
 
 abstract class BaseReviewsRepository extends BaseRepository 
 {
@@ -34,4 +34,4 @@ abstract class BaseReviewsRepository extends BaseRepository
         return Institution::find($institution)->$model;
     }
 
-} 
+}
