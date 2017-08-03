@@ -44,7 +44,7 @@ class Institution extends Model
      * All general reviews
      * @return Collection
      */
-    public function generalReviews()
+    public function generalreviews()
     {
         return $this->hasMany(GeneralReview::class);
     }
@@ -53,7 +53,7 @@ class Institution extends Model
      * All detailed reviews
      * @return Collection
      */
-    public function detailedReviews()
+    public function detailedreviews()
     {
         return $this->hasMany(DetailedReview::class);
     }
