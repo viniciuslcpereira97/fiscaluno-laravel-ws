@@ -8,16 +8,7 @@ class BaseRepository implements RepositoryInterface
      * Model of repository
      * @var
      */
-    protected $model;
-
-    /**
-     * Class constructor
-     * @param Model $model
-     */
-    public function __construct($model)
-    {
-        $this->model = $model;
-    }
+    protected $repository;
 
     /**
      * Retrieves all models occurrences at database
@@ -25,7 +16,7 @@ class BaseRepository implements RepositoryInterface
      */
     public function all()
     {
-        return $this->model->all();
+        return $this->repository->all();
     }
 
     /**
@@ -35,27 +26,7 @@ class BaseRepository implements RepositoryInterface
      */
     public function byId($id)
     {
-        return $this->model->find($id);
-    }
-
-    /**
-     * Retrieves all author's models occurences at database
-     * @param Model $author
-     * @return [type]
-     */
-    public function byAuthor($author)
-    {
-        return $author;
-    }
-
-    /**
-     * Retrieves all institution's models occurrences at database
-     * @param Model $institution
-     * @return [type]
-     */
-    public function byInstitution($institution)
-    {
-        return $institution;
+        return $this->repository->find($id);
     }
 
 }
