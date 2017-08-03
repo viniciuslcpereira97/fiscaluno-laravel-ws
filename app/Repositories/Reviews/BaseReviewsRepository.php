@@ -3,11 +3,14 @@
 namespace Fiscaluno\Repositories\Reviews;
 
 use Fiscaluno\Student\Student;
+use \Fiscaluno\Traits\HelperTrait;
 use Fiscaluno\Institution\Institution;
 use Fiscaluno\Repositories\BaseRepository;
 
 abstract class BaseReviewsRepository extends BaseRepository 
 {
+
+    use HelperTrait;
 
     /**
      * Retrieves all author's models occurences at database
@@ -26,7 +29,8 @@ abstract class BaseReviewsRepository extends BaseRepository
      */
     public function byInstitution($institution)
     {
-        return $institution;
+        $model = $this->getRelationshipString(get_class($this->repository));
+        return Institution::find($institution)->$model;
     }
 
 } 
