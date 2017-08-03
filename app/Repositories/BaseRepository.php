@@ -1,7 +1,7 @@
 <?php
 namespace Fiscaluno\Repositories;
 
-class BaseRepository implements RepositoryInterface
+abstract class BaseRepository implements RepositoryInterface
 {
 
     /**
@@ -35,7 +35,7 @@ class BaseRepository implements RepositoryInterface
      */
     public function byId($id)
     {
-        return $this->repository->find($id);
+        return $this->repository->findOrFail($id);
     }
 
 }
