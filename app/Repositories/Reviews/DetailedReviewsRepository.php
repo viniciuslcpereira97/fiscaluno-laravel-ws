@@ -11,7 +11,7 @@ class DetailedReviewsRepository extends BaseReviewsRepository
      */
     public function __construct(\Fiscaluno\Review\DetailedReview $reviews)
     {
-        $this->repository = $reviews;
+        parent::__construct($reviews);
     }
 
 }

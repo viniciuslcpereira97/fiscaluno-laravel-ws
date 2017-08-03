@@ -11,6 +11,15 @@ class BaseRepository implements RepositoryInterface
     protected $repository;
 
     /**
+     * Repository Constructor
+     * @param [type] $model [description]
+     */
+    public function __construct($model)
+    {
+        $this->repository = $model;
+    }
+
+    /**
      * Retrieves all models occurrences at database
      * @return [type]
      */

@@ -9,7 +9,7 @@ class InstitutionsRepository extends BaseRepository
 
     public function __construct(\Fiscaluno\Institution\Institution $repository)
     {
-        # code...
+        $this->repository = $repository;
     }
 
 }
