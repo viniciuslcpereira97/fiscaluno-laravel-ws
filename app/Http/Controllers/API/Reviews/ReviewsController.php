@@ -5,11 +5,15 @@ namespace Fiscaluno\Http\Controllers\API\Reviews;
 use Illuminate\Http\Request;
 use Fiscaluno\Http\Controllers\Controller;
 
+use Fiscaluno\Traits\ReviewType;
 use Fiscaluno\Repositories\Reviews\GeneralReviewsRepository;
 use Fiscaluno\Repositories\Reviews\DetailedReviewsRepository;
 
 class ReviewsController extends Controller
 {
+
+    use ReviewType;
+
     /**
      * Future repository object
      * @var Undefined
@@ -20,7 +24,7 @@ class ReviewsController extends Controller
      * Reviews possibilities
      * @var Array
      */
-    protected $reviews = [
+    protected $possibilities = [
         "detailed"  =>  DetailedReviewsRepository::class,
         "general"   =>  GeneralReviewsRepository::class
     ];
@@ -31,8 +35,8 @@ class ReviewsController extends Controller
      */
     public function __construct()
     {
-        preg_match('/.*(detailed|general).*/', \Route::current()->uri, $match);
-        $this->repository = new $this->reviews[$match[1]];
+        $review = $this->getReviewType($this->possibilities);
+        $this->repository = new $this->possibilities[$review];
     }
 
     /**
