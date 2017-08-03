@@ -25,19 +25,19 @@ Route::group([
     Route::group([
         'prefix' => 'general'
     ], function(){
-        Route::get('/', 'GeneralReviewsController@allReviews');
-        Route::get('{review_id}', 'GeneralReviewsController@reviewById');
-        Route::get('institution/{institution_id}', 'GeneralReviewsController@reviewsByInstitution');
-        Route::get('author/{author_id}', 'GeneralReviewsController@reviewsByAuthor');
+        Route::get('/', 'ReviewsController@allReviews');
+        Route::get('{review_id}', 'ReviewsController@reviewById');
+        Route::get('institution/{institution_id}', 'ReviewsController@reviewsByInstitution');
+        Route::get('author/{author_id}', 'ReviewsController@reviewsByAuthor');
     });
 
     Route::group([
         'prefix' => 'detailed'
     ], function() {
-        Route::get('/', 'DetailedReviewsController@allReviews');
-        Route::get('{review_id}', 'DetailedReviewsController@reviewById');
-        Route::get('institution/{institution_id}', 'DetailedReviewsController@reviewsByInstitution');
-        Route::get('author/{author_id}', 'DetailedReviewsController@reviewsByAuthor');
+        Route::get('/', 'ReviewsController@allReviews');
+        Route::get('{review_id}', 'ReviewsController@reviewById');
+        Route::get('institution/{institution_id}', 'ReviewsController@reviewsByInstitution');
+        Route::get('author/{author_id}', 'ReviewsController@reviewsByAuthor');
     });
 
 });
