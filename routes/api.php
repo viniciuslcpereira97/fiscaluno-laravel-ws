@@ -19,9 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group([
     'prefix' => 'reviews',
-    'namespace' => 'blank',
+    'namespace' => 'API\Reviews',
 ], function() {
-    Route::get('/', function() {
-        return 'teste';
-    });
+    Route::get('/detailed', 'GeneralReviewsController@allReviews');
 });
