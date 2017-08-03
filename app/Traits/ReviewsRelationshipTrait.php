@@ -2,13 +2,13 @@
 
 namespace Fiscaluno\Traits;
 
-trait HelperTrait
+trait ReviewsRelationshipTrait
 {
 
     /**
-     * [parseClassPath description]
-     * @param  [type] $path [description]
-     * @return [type]       [description]
+     * Traces classpath and retrieves relationship name
+     * @param String $path
+     * @return String
      */
     function getRelationshipString($path)
     {
@@ -16,6 +16,11 @@ trait HelperTrait
         return $this->normalizeName(end($splitted));
     }
 
+    /**
+     * Normalize review's relationship name
+     * @param  String $string
+     * @return String
+     */
     public function normalizeName($string)
     {
         return strtolower($string) . "s";
