@@ -30,8 +30,8 @@ class GeneralReviewsController extends Controller
 
     /**
      * General Review by Id
-     * @param  [type] $review_id [description]
-     * @return [type]            [description]
+     * @param  Integer $review_id
+     * @return Fiscaluno\Review\GeneralReview
      */
     public function reviewById($review_id)
     {
@@ -40,12 +40,22 @@ class GeneralReviewsController extends Controller
 
     /**
      * General Reviews by institution
-     * @param  [type] $institutionId [description]
-     * @return [type]                [description]
+     * @param  Integer $institutionId
+     * @return Collection
      */
     public function reviewsByInstitution($institutionId)
     {
         return $this->repository->byInstitution($institutionId);
+    }
+
+    /**
+     * General Reviews by author
+     * @param  Integer $author_id
+     * @return Collection
+     */
+    public function reviewsByAuthor($author_id)
+    {
+        return $this->repository->byAuthor($author_id);
     }
 
 }

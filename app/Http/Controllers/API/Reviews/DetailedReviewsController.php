@@ -20,7 +20,7 @@ class DetailedReviewsController extends Controller
     }
 
     /**
-     * All General Reviews
+     * All Detailed Reviews
      * @return Collection
      */
     public function allReviews()
@@ -29,9 +29,9 @@ class DetailedReviewsController extends Controller
     }
 
     /**
-     * General Review by Id
-     * @param  [type] $review_id [description]
-     * @return [type]            [description]
+     * Detailed Review by Id
+     * @param  Integer $review_id
+     * @return Fiscaluno\Review\DetailedReview
      */
     public function reviewById($review_id)
     {
@@ -39,13 +39,23 @@ class DetailedReviewsController extends Controller
     }
 
     /**
-     * General Reviews by institution
-     * @param  [type] $institutionId [description]
-     * @return [type]                [description]
+     * Detailed Reviews by institution
+     * @param  Integer $institutionId
+     * @return Collection
      */
     public function reviewsByInstitution($institutionId)
     {
         return $this->repository->byInstitution($institutionId);
+    }
+
+    /**
+     * Detailed Reviews by author
+     * @param  Integer $author_id
+     * @return Collection
+     */
+    public function reviewsByAuthor($author_id)
+    {
+        return $this->repository->byAuthor($author_id);
     }
 
 }
