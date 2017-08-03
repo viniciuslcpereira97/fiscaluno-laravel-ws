@@ -21,7 +21,21 @@ Route::group([
     'prefix' => 'reviews',
     'namespace' => 'API\Reviews',
 ], function() {
-    Route::get('/general', 'GeneralReviewsController@allReviews');
-    Route::get('/general/{review_id}', 'GeneralReviewsController@reviewById');
-    Route::get('/general/institution/{institution_id}', 'GeneralReviewsController@reviewsByInstitution');
+    
+    Route::group([
+        'prefix' => 'general'
+    ], function(){
+        Route::get('/', 'GeneralReviewsController@allReviews');
+        Route::get('{review_id}', 'GeneralReviewsController@reviewById');
+        Route::get('institution/{institution_id}', 'GeneralReviewsController@reviewsByInstitution');
+    });
+
+    Route::group([
+        'prefix' => 'detailed'
+    ], function() {
+        Route::get('/', 'DetailedReviewsController@allReviews');
+        Route::get('{review_id}', 'DetailedController@reviewById');
+        Route::get('institution/{institution_id}', 'DetailedController@reviewsByInstitution');
+    });
+    
 });
