@@ -21,5 +21,7 @@ Route::group([
     'prefix' => 'reviews',
     'namespace' => 'API\Reviews',
 ], function() {
-    Route::get('/detailed', 'GeneralReviewsController@allReviews');
+    Route::get('/general', 'GeneralReviewsController@allReviews');
+    Route::get('/general/{review_id}', 'GeneralReviewsController@reviewById');
+    Route::get('/general/institution/{institution_id}', 'GeneralReviewsController@reviewsByInstitution');
 });
