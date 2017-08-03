@@ -34,8 +34,8 @@ Route::group([
         'prefix' => 'detailed'
     ], function() {
         Route::get('/', 'DetailedReviewsController@allReviews');
-        Route::get('{review_id}', 'DetailedController@reviewById');
-        Route::get('institution/{institution_id}', 'DetailedController@reviewsByInstitution');
+        Route::get('{review_id}', 'DetailedReviewsController@reviewById');
+        Route::get('institution/{institution_id}', 'DetailedReviewsController@reviewsByInstitution');
     });
-    
+
 });
