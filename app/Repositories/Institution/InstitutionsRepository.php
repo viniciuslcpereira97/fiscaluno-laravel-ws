@@ -26,4 +26,18 @@ class InstitutionsRepository extends BaseRepository
         return $this->byId($institution_id)->generalRate();
     }
 
+    /**
+     * Get Institution's Rates
+     * @param  Integer $institution_id
+     * @return Array
+     */
+    public function getRates($institution_id)
+    {
+        $institution = $this->byId($institution_id);
+
+        return [
+            "general_rate" => $institution->generalRate()
+        ];
+    }
+
 }
