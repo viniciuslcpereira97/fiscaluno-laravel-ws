@@ -58,4 +58,12 @@ class Institution extends Model
         return $this->hasMany(DetailedReview::class);
     }
 
+    /**
+     * Get General rate
+     * @return [type] [description]
+     */
+    public function generalRate()
+    {
+        return ($this->general_rate / $this->generalreviews->count());
+    }
 }
