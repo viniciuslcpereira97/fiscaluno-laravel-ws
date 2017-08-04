@@ -2,17 +2,29 @@
 
 namespace Fiscaluno\Traits;
 
+use Fiscaluno\Repositories\Reviews\GeneralReviewsRepository;
+use Fiscaluno\Repositories\Reviews\DetailedReviewsRepository;
+
 trait ReviewType
 {
+
+    /**
+     * Reviews possibilities
+     * @var Array
+     */
+    protected $possibilities = [
+        "detailed"  =>  DetailedReviewsRepository::class,
+        "general"   =>  GeneralReviewsRepository::class
+    ];
 
     /**
      * Provides Review type to controller
      * @param  Array $possibilities
      * @return String
      */
-    public function getReviewType($possibilities)
+    public function getReviewType()
     {
-        return $this->matchReview($possibilities);
+        return $this->matchReview();
     }
 
     /**
@@ -20,9 +32,10 @@ trait ReviewType
      * @param  Array $possibilities
      * @return String
      */
-    public function getPossibilitiesString($possibilities)
+    public function getPossibilitiesString()
     {
         $reg_possibilities = "";
+        $possibilities = $this->possibilities;
         foreach($possibilities as $possibility => $class)
         {
             $reg_possibilities .= "{$possibility}|";
@@ -45,9 +58,9 @@ trait ReviewType
      * @param  Array $possibilities
      * @return String
      */
-    private function matchReview($possibilities)
+    private function matchReview()
     {
-        $possibilities = $this->getPossibilitiesString($possibilities);
+        $possibilities = $this->getPossibilitiesString();
         preg_match("/.*({$possibilities}).*/", \Route::current()->uri, $match);
         return $match[1];
     }

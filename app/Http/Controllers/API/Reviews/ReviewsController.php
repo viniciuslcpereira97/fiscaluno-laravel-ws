@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use Fiscaluno\Http\Controllers\Controller;
 
 use Fiscaluno\Traits\ReviewType;
-use Fiscaluno\Repositories\Reviews\GeneralReviewsRepository;
-use Fiscaluno\Repositories\Reviews\DetailedReviewsRepository;
 
 class ReviewsController extends Controller
 {
@@ -21,22 +19,12 @@ class ReviewsController extends Controller
     protected $repository;
 
     /**
-     * Reviews possibilities
-     * @var Array
-     */
-    protected $possibilities = [
-        "detailed"  =>  DetailedReviewsRepository::class,
-        "general"   =>  GeneralReviewsRepository::class
-    ];
-
-    /**
      * Dependency Injection
      * @param GeneralReviewsRepository $repository [description]
      */
     public function __construct()
     {
-        $review = $this->getReviewType($this->possibilities);
-        $this->repository = new $this->possibilities[$review];
+        $this->repository = new $this->possibilities[$this->getReviewType()];
     }
 
     /**
