@@ -10,7 +10,7 @@ use Fiscaluno\Repositories\Institution\InstitutionsRepository;
 class RankingController extends Controller
 {
 
-    public function getGeneralRanking(InstitutionsRepository $repository, $top_limit)
+    public function getGeneralRanking(InstitutionsRepository $repository, $top_limit = 5)
     {
         return $repository->orderedByRate($direction = "desc", $top_limit);
     }

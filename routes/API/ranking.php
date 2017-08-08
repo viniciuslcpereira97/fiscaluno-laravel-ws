@@ -13,5 +13,5 @@ Route::group([
     'prefix' => 'ranking',
     'namespace' => 'API'
 ], function() {
-    Route::get('/{top_limit}', 'RankingController@getGeneralRanking');
+    Route::get('/{top_limit?}', 'RankingController@getGeneralRanking');
 });
