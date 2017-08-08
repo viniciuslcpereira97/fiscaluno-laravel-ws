@@ -47,7 +47,8 @@ $factory->define(\Fiscaluno\Institution\Institution::class, function(Faker\Gener
         'email' => $faker->unique()->safeEmail,
         'website' => $faker->domainName,
         'phoneNumber' => $faker->phoneNumber,
-        'imageUri' => $faker->url
+        'imageUri' => $faker->url,
+        'general_rate' => $faker->numberBetween($min = 0, $max = 100000)
     ];
 });
 

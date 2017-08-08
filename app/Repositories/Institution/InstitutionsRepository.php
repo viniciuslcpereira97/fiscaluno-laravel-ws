@@ -40,4 +40,14 @@ class InstitutionsRepository extends BaseRepository
         ];
     }
 
+    /**
+     * Get Institution's ordered by General Rate
+     * @param  string $direction
+     * @return Collection
+     */
+    public function orderedByRate($direction = "asc", $limit = 5)
+    {
+        return $this->repository->orderBy('general_rate', $direction)->limit($limit)->get();
+    }
+
 }
