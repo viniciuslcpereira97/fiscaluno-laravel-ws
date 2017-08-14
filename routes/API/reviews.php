@@ -19,6 +19,8 @@ Route::group([
         Route::get('{review_id}', 'ReviewsController@reviewById');
         Route::get('institution/{institution_id}', 'ReviewsController@reviewsByInstitution');
         Route::get('author/{author_id}', 'ReviewsController@reviewsByAuthor');
+
+        Route::post('create', 'ReviewsController@newReview');
     };
     
     Route::group(['prefix'  =>  'general'], $review_routes);
