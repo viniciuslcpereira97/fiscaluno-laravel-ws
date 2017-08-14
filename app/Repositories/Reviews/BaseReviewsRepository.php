@@ -34,4 +34,14 @@ abstract class BaseReviewsRepository extends BaseRepository
         return Institution::find($institution)->$model;
     }
 
+    /**
+     * create new Review
+     * @param  Illuminate\Http\Request $data [description]
+     * @return [type]       [description]
+     */
+    public function create($data)
+    {
+        return $this->repository->create($data->all());
+    }
+
 }
