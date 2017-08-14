@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Fiscaluno\Http\Controllers\Controller;
 
 use Fiscaluno\Traits\ReviewType;
+use Fiscaluno\Http\Requests\ReviewRequest;
 
 class ReviewsController extends Controller
 {
@@ -64,6 +65,16 @@ class ReviewsController extends Controller
     public function reviewsByAuthor($author_id)
     {
         return $this->repository->byAuthor($author_id);
+    }
+
+    /**
+     * [newReview description]
+     * @param  ReviewRequest $request [description]
+     * @return [type]           [description]
+     */
+    public function newReview(ReviewRequest $request)
+    {
+        return $this->repository->create($request);
     }
 
 }
