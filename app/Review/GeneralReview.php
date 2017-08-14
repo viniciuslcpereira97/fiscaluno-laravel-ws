@@ -28,4 +28,14 @@ class GeneralReview extends Review
      */
     protected $guarded = ['id'];
 
+    /**
+     * Create new review
+     * @param  [type] $data [description]
+     * @return [type]       [description]
+     */
+    public function review($data)
+    {
+        return $this->create($data);
+    }
+
 }
