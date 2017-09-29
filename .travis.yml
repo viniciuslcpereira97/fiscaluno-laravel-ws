@@ -1,5 +1,13 @@
 language: php
+
 notifications:
   email:
     - viniciuslcpereira@gmail.com
     - wilder_roberto@hotmail.com
+
+before_script:
+  - cp .env.example .env
+  - composer install
+
+script:
+  - vendor/bin/phpunit
