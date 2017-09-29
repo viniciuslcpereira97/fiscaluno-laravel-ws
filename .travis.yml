@@ -5,12 +5,14 @@ php:
 
 notifications:
   email:
+    on_success: always
     - viniciuslcpereira@gmail.com
     - wilder_roberto@hotmail.com
 
 before_script:
   - cp .env.example .env
   - composer install
+  - php artisan key:generate
 
 script:
   - vendor/bin/phpunit
