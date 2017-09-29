@@ -8,7 +8,6 @@ notifications:
     on_success: always
     recipients:
       - viniciuslcpereira@gmail.com
-      - wilder_roberto@hotmail.com
 
 before_script:
   - cp .env.example .env
