@@ -17,5 +17,4 @@ Route::group([
     Route::get('/{institution_id}', 'InstitutionController@byId');
     Route::get('/general/{institution_id}', 'InstitutionController@getGeneralRate');
     Route::get('/rates/{institution_id}', 'InstitutionController@getRates');
-    Route::get('teste', 'InstitutionController@teste');
 });

@@ -16,6 +16,15 @@ class StudentRepository extends BaseRepository {
     }
 
     /**
+     * [FunctionName description]
+     * @param string $value [description]
+     */
+    public function create($student_data)
+    {
+        return $this->repository->create($student_data);
+    }
+
+    /**
      * Get students by age
      * @param  Integer $age
      * @return Collection
