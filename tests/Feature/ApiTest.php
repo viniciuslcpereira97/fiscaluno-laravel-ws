@@ -7,18 +7,18 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ApiTests extends TestCase
+class ApiTest extends TestCase
 {
 
     /**
-     * Tests all apis routes
+     * Tests all GET method api routes
      * @return [type] [description]
      */
-    public function testAPIReviewsRoutes()
+    public function testGETAPIReviewsRoutes()
     {
         foreach(\Route::getRoutes() as $route)
         {
-            if($route->action["middleware"] === "api")
+            if($route->action["middleware"] === "api" && in_array('GET', $route->methods))
             {
                 $uri = preg_replace('/\{.*\}/', "1", $route->uri);
                 $response = $this->get($uri);
