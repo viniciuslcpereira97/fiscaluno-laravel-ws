@@ -16,8 +16,8 @@ class StudentRepository extends BaseRepository {
     }
 
     /**
-     * [FunctionName description]
-     * @param string $value [description]
+     * Create new student
+     * @param Array $student_data
      */
     public function create($student_data)
     {
