@@ -6,8 +6,9 @@ php:
 notifications:
   email:
     on_success: always
-    - viniciuslcpereira@gmail.com
-    - wilder_roberto@hotmail.com
+    recipients:
+      - viniciuslcpereira@gmail.com
+      - wilder_roberto@hotmail.com
 
 before_script:
   - cp .env.example .env
