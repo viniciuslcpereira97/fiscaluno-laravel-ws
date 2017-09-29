@@ -1,0 +1,5 @@
+language: php
+notifications:
+  email:
+    - viniciuslcpereira@gmail.com
+    - wilder_roberto@hotmail.com
