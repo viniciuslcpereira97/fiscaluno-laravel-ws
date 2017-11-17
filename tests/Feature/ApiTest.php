@@ -21,6 +21,7 @@ class ApiTest extends TestCase
             if($route->action["middleware"] === "api" && in_array('GET', $route->methods))
             {
                 $uri = preg_replace('/\{.*\}/', "1", $route->uri);
+                echo $uri . "\n";
                 $response = $this->get($uri);
                 $response->assertStatus(200);
             }
