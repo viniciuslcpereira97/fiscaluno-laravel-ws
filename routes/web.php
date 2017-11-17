@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('show-routes', function() {
+    foreach(Route::getRoutes() as $route) {
+        echo "<h3>" . $route->uri() . "</h3>";
+    }
+});
