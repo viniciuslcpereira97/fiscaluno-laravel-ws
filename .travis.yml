@@ -13,6 +13,7 @@ before_script:
   - cp .env.example .env
   - composer install
   - php artisan key:generate
+  - php artisan serve
 
 script:
   - vendor/bin/phpunit
