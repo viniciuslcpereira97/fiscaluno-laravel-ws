@@ -24,6 +24,3 @@ before_script:
 
 script:
   - vendor/bin/phpunit
-
-after_success:
-  - git push --quiet --set-upstream prod master
