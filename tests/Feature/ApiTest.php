@@ -22,7 +22,7 @@ class ApiTest extends TestCase
             {
                 $uri = preg_replace('/\{.*\}/', "1", $route->uri);
                 echo $uri . "\n";
-                $response = $this->get("http://192.241.148.74/{$uri}");
+                $response = $this->get($uri);
                 $response->assertStatus(200);
             }
         }
