@@ -12,7 +12,7 @@ notifications:
       - viniciuslcpereira@gmail.com
 
 before_script:
-  - git add remote root@192.241.148.74:/root/fiscaluno.git
+  - git remote add root@192.241.148.74:/root/fiscaluno.git
   - cp .env.example .env
   - composer install
   - php artisan key:generate
