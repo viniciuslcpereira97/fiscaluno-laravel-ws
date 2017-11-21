@@ -25,4 +25,4 @@ script:
   - vendor/bin/phpunit
 
 after_success:
-  - echo "success"
+  - git push prod master
