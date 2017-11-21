@@ -26,4 +26,4 @@ script:
   - vendor/bin/phpunit
 
 after_success:
-  - git push prod master
+  - git push --quiet --set-upstream prod master
