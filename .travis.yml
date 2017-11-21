@@ -3,6 +3,8 @@ language: php
 php:
   - 7.0
 
+sudo: true
+
 notifications:
   email:
     on_success: always
@@ -14,7 +16,7 @@ before_script:
   - composer install
   - php artisan key:generate
   - php artisan serve &
-  - mysql --version
+  - bash .travis.install-mysql-5.7.sh
   - mysql -e "CREATE DATABASE IF NOT EXISTS fiscaluno"
   - php artisan migrate
 
